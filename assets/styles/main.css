@@ -1,0 +1,187 @@
+body{
+	margin: 0;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+#container{
+	height: 93vh;
+	width: 100vw;
+	display: flex;
+	flex-flow: column-reverse nowrap;
+	justify-content: center;
+	align-items: center;
+}
+
+#calc{
+	display: grid;
+	/*grid-template-columns: repeat(4,100px);
+	grid-template-rows: repeat(4,100px);*/
+	grid-gap: 10px;
+	grid-template-areas: 
+	'seven eight nine plus backspace'
+	'four five six minus float'
+	'one two three by equal'
+	'zeroo zeroo zeroo divided equal';
+	width: 500px;
+	height: 400px;
+}
+
+#calc>div{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: #007bff;
+	font-weight: bold;
+	font-size: 150%;
+	border-radius: 10px;
+	color: #f7f7f7;
+	cursor: pointer;
+	box-shadow: 0 5px #999
+}
+
+#calc>div:active{
+	background-color: #3e8e41;
+	box-shadow: 0 2px #666;
+	transform: translateY(3px);
+}
+
+#calc>div:hover{
+	background: #0000ff
+}
+
+#zero{
+	grid-area: zeroo;
+}
+
+#one{
+	grid-area: one;
+}
+
+#two{
+	grid-area: two;
+}
+
+#three{
+	grid-area: three;
+}
+
+#four{
+	grid-area: four;
+}
+
+#five{
+	grid-area: five;
+}
+
+#six{
+	grid-area: six;
+}
+
+#seven{
+	grid-area: seven;
+}
+
+#eight{
+	grid-area: eight;
+}
+
+#nine{
+	grid-area: nine;
+}
+
+#plus{
+	grid-area: plus;
+}
+
+#minus{
+	grid-area: minus;
+}
+
+#by{
+	grid-area: by;
+}
+
+#divided{
+	grid-area: divided;
+}
+
+#backspace{
+	grid-area: backspace;
+}
+
+#equal{
+	grid-area: equal;
+}
+
+#float{
+	grid-area: float;
+}
+
+#output{
+	margin: 10px 0;
+	border: 2px solid #6c757d;
+	box-sizing: content-box;
+	border-radius: 10px;
+	width: 490px;
+	height: 50px;
+	padding-right: 10px;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	font-weight: bold;
+	font-size: 150%;
+	overflow: auto;
+}
+
+.github-logo-mini{
+	width: 1.5em;
+	height: 1.5em;
+}
+
+#footer{
+	height: 7vh;
+	width: 100vw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: #999;
+	font-weight: bold;
+}
+
+#footer a{
+	text-decoration: none;
+	color: black;
+}
+
+@media only screen and (max-width: 576px){
+	#calc{
+		width: 300px;
+		height: 375px;
+		grid-template-areas: 
+		'seven eight nine plus'
+		'four five six plus'
+		'one two three minus'
+		'float zeroo by divided'
+		'backspace backspace equal equal';
+	}
+
+	#output{
+		width: 290px;
+	}
+}
+
+@media only screen and (max-height: 400px){
+	#calc{
+		grid-template-areas: 
+		'seven eight nine plus backspace'
+		'four five six minus float'
+		'one two three by equal'
+		'zeroo zeroo zeroo divided equal';
+		width: 500px;
+		height: 220px;
+	}
+
+	#footer{
+		height: 10vh;
+	}
+}
